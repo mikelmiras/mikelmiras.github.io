@@ -34,9 +34,9 @@
     
     <div class="contenedor-general contenedor1">
         <div id="flip-card0" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(0)" class="flip-card-inner" id="flip-card-inner0">
               <div class="flip-card-front">
-                <img onclick="ejecute(0)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168682705977375/img7.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168682705977375/img7.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -44,9 +44,9 @@
             </div>
           </div>
           <div id="flip-card1" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(1)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(1)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168680755888128/img6.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168680755888128/img6.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -54,9 +54,9 @@
             </div>
           </div>
           <div id="flip-card2" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(2)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(2)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168662346170368/img2.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168662346170368/img2.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -66,9 +66,9 @@
     </div>
     <div class="contenedor-general">
         <div id="flip-card3" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(3)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(3)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168658861359174/img1.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168658861359174/img1.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -76,9 +76,9 @@
             </div>
           </div>
           <div id="flip-card4" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(4)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(4)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168656944824380/img5.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168656944824380/img5.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -86,9 +86,9 @@
             </div>
           </div>
           <div id="flip-card5" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(5)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(5)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168656126410802/img4.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168656126410802/img4.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -96,9 +96,9 @@
             </div>
           </div>
           <div id="flip-card6" class="permanent">
-            <div class="flip-card-inner">
+            <div onclick="ejecute(6)" class="flip-card-inner">
               <div class="flip-card-front">
-                <img onclick="ejecute(6)" id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168654314209338/img3.png" alt="Avatar">
+                <img id="imagen" src="https://cdn.discordapp.com/attachments/838168473758203964/838168654314209338/img3.png" alt="Avatar">
               </div>
               <div class="flip-card-back">
                 <img src="https://cdn.discordapp.com/attachments/838168473758203964/838177959600455720/back.png" style="width: 168.75px; height: 300px;" />
@@ -110,11 +110,16 @@
     <script>
         questionid = 1;
         function ejecute(id){
-            element = document.getElementById('flip-card' + id);
-            element.className = "flip-card-hover permanent";
-            nextQuestion();
+            var element = document.getElementById('flip-card' + id);
+            var string1 = "permanent"
+            var string2 = element.className;
+            var result = string1.localeCompare(string2);
+            if (result == 0){
+              element.className = "flip-card-hover permanent";
+            }else{
+              element.className = "permanent";
+            }
         }
-
         function nextQuestion(){
             if (questionid < 6){
                 document.getElementById("btndelante").disabled = false;
@@ -179,6 +184,7 @@
     }
     body {
         background-image: url("https://cdn.discordapp.com/attachments/592382167292575766/838140188580249660/fondo.png");
+        overflow: hidden;
     }
     .contenedor-general {
         
