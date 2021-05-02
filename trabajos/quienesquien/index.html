@@ -4,7 +4,10 @@
     rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 <!-- Primary Meta Tags -->
 <title>Quién es quién</title>
 <meta name="title" content="Quién es quién">
@@ -28,7 +31,7 @@
     <img class="main-img" src="https://e00-elmundo.uecdn.es/promociones/juegoshasbro/img/logo-QUIEN.png"/>
     <div class="textbar">
         <button disabled onclick="prevQuestion()" id="btndetras" class="btn" type="button"><span class="material-icons">arrow_back</span></button>
-        <p id="pregunta">Pregunta bla bla bla bla bla</p>
+        <p class="animate__animated animate__bounceIn" id="pregunta">Ez du alokoholik edaten</p>
         <button id="btndelante" onclick="nextQuestion()" class="btn" type="button"><span class="material-icons">arrow_forward</span></button>
     </div>
     
@@ -121,17 +124,17 @@
             }
         }
         function nextQuestion(){
-            if (questionid < 6){
+            if (questionid < 4){
                 document.getElementById("btndelante").disabled = false;
                 document.getElementById("btndetras").disabled = false;
                 questionid = questionid + 1;
-                if (questionid == 6){
+                if (questionid == 4){
                     
                     document.getElementById("btndelante").disabled = true;
                     
                 }
             }else{
-                if (questionid == 6){
+                if (questionid == 4){
                     
                     document.getElementById("btndelante").disabled = true;
                     
@@ -160,12 +163,29 @@
         }
 
         function cambiarPregunta(id){
-            if (id == 1) {      document.getElementById("pregunta").innerHTML = "Pregunta 1";      }
-            if (id == 2) {      document.getElementById("pregunta").innerHTML = "Pregunta 2";      }
-            if (id == 3) {      document.getElementById("pregunta").innerHTML = "Pregunta 3";        }
-            if (id == 4) {      document.getElementById("pregunta").innerHTML = "Pregunta 4";     }
-            if (id == 5) {      document.getElementById("pregunta").innerHTML = "Pregunta 5";      }
-            if (id == 6) {      document.getElementById("pregunta").innerHTML = "Pregunta 6";      }
+            if (id == 1) {    
+                 document.getElementById("pregunta").innerHTML = "Ez du alokoholik edaten"; 
+                 document.getElementById("pregunta").className = "";
+                 setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
+                  
+                };
+            if (id == 2) {     
+                  
+                document.getElementById("pregunta").innerHTML = "Egunero otoitz egiten du"; 
+                 document.getElementById("pregunta").className = "";
+                 setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
+              }
+            if (id == 3) {      
+                 
+              document.getElementById("pregunta").innerHTML = "Bidaiatzea gustoko du"; 
+                 document.getElementById("pregunta").className = "";
+                 setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
+                  }
+            if (id == 4) {         
+                 document.getElementById("pregunta").innerHTML = "Gonbidatuko zenuke pertsona hau zure etxera bazkaltzera?"; 
+                 document.getElementById("pregunta").className = "";
+                 setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
+                   }
         }
     </script>
 </body>
