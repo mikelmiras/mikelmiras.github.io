@@ -124,17 +124,17 @@
             }
         }
         function nextQuestion(){
-            if (questionid < 4){
+            if (questionid < 3){
                 document.getElementById("btndelante").disabled = false;
                 document.getElementById("btndetras").disabled = false;
                 questionid = questionid + 1;
-                if (questionid == 4){
+                if (questionid == 3){
                     
                     document.getElementById("btndelante").disabled = true;
                     
                 }
             }else{
-                if (questionid == 4){
+                if (questionid == 3){
                     
                     document.getElementById("btndelante").disabled = true;
                     
@@ -175,13 +175,7 @@
                  document.getElementById("pregunta").className = "";
                  setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
               }
-            if (id == 3) {      
-                 
-              document.getElementById("pregunta").innerHTML = "Esto hay que cambiarlo"; 
-                 document.getElementById("pregunta").className = "";
-                 setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
-                  }
-            if (id == 4) {         
+            if (id == 3) {         
                  document.getElementById("pregunta").innerHTML = "Gonbidatuko zenuke pertsona hau zure etxera bazkaltzera?"; 
                  document.getElementById("pregunta").className = "";
                  setTimeout(() => {  document.getElementById("pregunta").className = "animate__bounceIn";     }, 20);
